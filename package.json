@@ -2,13 +2,12 @@
   "name": "light-bootstrap-dashboard-react",
   "version": "1.1.0",
   "private": true,
-  "main": "server.js",
   "repository": {
 	"type": "git",
 	"url": "git+https://github.com/iggy788/Papayas-Project-3.git"
 },
 "keywords": [],
-"author": "",
+"author": "Mike Ignaczak",
 "license": "ISC",
 "bugs": {
 	"url": "https://github.com/iggy788/Papayas-Project-3/issues"
