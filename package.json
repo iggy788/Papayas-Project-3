@@ -3,16 +3,16 @@
   "version": "1.1.0",
   "private": true,
   "repository": {
-	"type": "git",
-	"url": "git+https://github.com/iggy788/Papayas-Project-3.git"
-},
-"keywords": [],
-"author": "Mike Ignaczak",
-"license": "ISC",
-"bugs": {
-	"url": "https://github.com/iggy788/Papayas-Project-3/issues"
-},
-"homepage": "https://github.com/iggy788/Papayas-Project-3#readme",
+    "type": "git",
+    "url": "git+https://github.com/iggy788/Papayas-Project-3.git"
+  },
+  "keywords": [],
+  "author": "Mike Ignaczak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iggy788/Papayas-Project-3/issues"
+  },
+  "homepage": "https://github.com/iggy788/Papayas-Project-3#readme",
   "dependencies": {
     "chartist": "^0.10.1",
     "create-react-app": "^1.3.3",
