@@ -1,27 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 import {
-    HashRouter,
-    Route,
-    Switch
-} from 'react-router-dom';
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 
-import App from 'containers/App/App.jsx';
+import App from './components/App/App';
+import NotFound from './components/App/NotFound';
 
-import './assets/css/bootstrap.min.css';
-import './assets/css/animate.min.css';
-import './assets/sass/light-bootstrap-dashboard.css';
-import './assets/css/demo.css';
-import './assets/css/pe-icon-7-stroke.css';
+import Home from './components/Home/Home';
 
+import HelloWorld from './components/HelloWorld/HelloWorld';
 
+import './styles/styles.scss';
 
-
-ReactDOM.render((
-    <HashRouter>
-        <Switch>
-            <Route path="/" name="Home" component={App}/>
-        </Switch>
-    </HashRouter>
-),document.getElementById('root'));
+render((
+  <Router>
+    <App>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/helloworld" component={HelloWorld}/>
+        <Route component={NotFound}/>
+      </Switch>
+    </App>
+  </Router>
+), document.getElementById('src'));
