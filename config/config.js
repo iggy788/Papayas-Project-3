@@ -2,5 +2,5 @@
 
 module.exports = {
   db: process.env.MONGODB_URI || 'mongodb://username:password@url:port/db',
-  db_dev: 'mongodb://localhost:27017/login_demo'
+  db_dev: 'mongodb://localhost/login_demo'
 };
