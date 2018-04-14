@@ -8,13 +8,11 @@
   },
   "keywords": [],
   "author": "Mike Ignaczak",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/iggy788/Papayas-Project-3/issues"
   },
   "homepage": "https://github.com/iggy788/Papayas-Project-3#readme",
-  "license": "MIT",
-  "private": true,
   "scripts": {
     "start": "webpack -p --progress --profile --colors && node server",
     "start:dev": "node server",
