@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getFromStorage, setInStorage } from '../utils/storage';
+import { getFromStorage, setInStorage } from 'utils/storage';
 import 'whatwg-fetch';
 
 class Home extends Component {
