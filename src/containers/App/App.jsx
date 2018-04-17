@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import {
-    Route,
+	Route,
     Switch,
-    Redirect
+	Redirect
 } from 'react-router-dom';
 // import NotificationSystem from 'react-notification-system';
 
-import { getFromStorage, setInStorage } from 'utils/storage.jsx';
+import { getFromStorage, setInStorage } from 'utils/storage';
 import 'whatwg-fetch';
+// import App from 'components/App/App';
+// import NotFound from 'components/App/NotFound';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
 import Sidebar from 'components/Sidebar/Sidebar';
-import Home from 'components/Home/Home';
+// import Home from 'components/Home/Home';
 
-import {style} from "variables/Variables.jsx";
+// import {style} from "variables/Variables.jsx";
 
 import appRoutes from 'routes/app.jsx';
 
+
+// // API routes
+// require('../../server/routes')(app);
 class App extends Component {
     constructor(props){
         super(props);
@@ -92,7 +97,7 @@ class App extends Component {
     //         autoDismiss: 15,
     //     });
     // }
-    componentDidMount(){
+
         // this.setState({_notificationSystem: this.refs.notificationSystem});
         // var _notificationSystem = this.refs.notificationSystem;
         // var color = Math.floor((Math.random() * 4) + 1);
@@ -127,11 +132,15 @@ class App extends Component {
 		/////********************************************************
 		// Initialization that requires DOM nodes should go here is invoked immediately after a component is mounted
 		// Calling setState() in this method will trigger an extra rendering, but it will happen before the browser updates the screen.
+	componentDidMount() {
 		const obj = getFromStorage('the_main_app');
+		console.log(obj);
+
 		if (obj && obj.token) {
 			const { token } = obj;
+			console.log(token);
 			// Verify Token
-			fetch('/api/account/verify?token=' + token)
+			fetch('api/account/verify?token=' + token)
 				.then(res => res.json())
 				.then(json => {
 					if (json.success) {
@@ -170,6 +179,7 @@ class App extends Component {
 		this.setState({
 		isLoading: true
 		});
+		console.log(this.state);
 		// POST Request to Backend.
 		fetch('api/account/signup', {
 		method: 'POST',
@@ -183,7 +193,7 @@ class App extends Component {
 			'Content-Type': 'application/json'
 		})
 		})
-		.then(res => res.json())
+		// .then(res => res.json())
 		.then(json => {
 			if (json.success) {
 			this.setState({
@@ -212,21 +222,23 @@ class App extends Component {
 		isLoading: true
 		});
 
+		console.log(this.state);
 		// POST Request to Backend.
 		fetch('api/account/signin', {
 		method: 'POST',
-		body: JSON.stringify({
-			email: signInEmail,
-			password: signInPassword
-		}),
-		headers: new Headers({
-			'Content-Type': 'application/json'
+			body: JSON.stringify({
+				email: signInEmail,
+				password: signInPassword
+			}),
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			})
 		})
-		})
-		.then(res => res.json())
+		// .then(res => res.json())
 		.then(json => {
 			if (json.success) {
 			setInStorage('the_main_app', { token: json.token });
+			console.log(setInStorage);
 			this.setState({
 				signInError: json.message,
 				isLoading: false,
@@ -252,7 +264,7 @@ class App extends Component {
 		if (obj && obj.token) {
 		const { token } = obj;
 		// Logout Takes a Query Param of Token
-		fetch('/api/account/logout?token=' + token)
+		fetch('api/account/logout?token=' + token)
 			.then(res => res.json())
 			.then(json => {
 			if (json.success) {

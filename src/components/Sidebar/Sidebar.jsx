@@ -33,13 +33,13 @@ class Sidebar extends Component{
             <div id="sidebar" className="sidebar" data-color="black" data-image={imagine}>
                 <div className="sidebar-background" style={sidebarBackground}></div>
                     <div className="logo">
-                        <a href="#" className="simple-text logo-mini">
+                        <a className="simple-text logo-mini">
                             <div className="logo-img">
                                 <img src={logo} alt="logo_image"/>
                             </div>
 
                         </a>
-                        <a href="#" className="simple-text logo-normal">
+                        <a className="simple-text logo-normal">
                             Like, Um
                         </a>
                     </div>
